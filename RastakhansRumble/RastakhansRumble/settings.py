@@ -83,9 +83,14 @@ DATABASES = {
 prod_db = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(prod_db)
 
-# mongoengine.connect(
-#     db="RastakHansRumble",
-#     host="mongodb+srv://admin:qwerty123@cluster0-raxxy.mongodb.net")
+mongoengine.connect(
+    db="RastakHansRumble",
+    username="admin",
+    password="querty123",
+    authentication_source='admin',
+    host=
+    "mongodb://cluster0-shard-00-00-raxxy.mongodb.net:27017,cluster0-shard-00-01-raxxy.mongodb.net:27017,cluster0-shard-00-02-raxxy.mongodb.net:27017"
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
