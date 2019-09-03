@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '11)j7z1*(k4g&8kt(jut*-z@ak&0lwznrtmidl+7eo+r16v#_n'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['rastakhans-rumble-api.herokuapp.com', '127.0.0.1']
 
