@@ -26,7 +26,7 @@ SECRET_KEY = '11)j7z1*(k4g&8kt(jut*-z@ak&0lwznrtmidl+7eo+r16v#_n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['rastakhans-rumble-api.herokuapp.com']
+ALLOWED_HOSTS = ['rastakhans-rumble-api.herokuapp.com', '127.0.0.1']
 
 # Application definition
 
@@ -84,13 +84,10 @@ prod_db = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(prod_db)
 
 mongoengine.connect(
-    db="RastakHansRumble",
-    username="admin",
-    password="querty123",
-    authentication_source='admin',
-    host=
-    "mongodb://cluster0-shard-00-00-raxxy.mongodb.net:27017,cluster0-shard-00-01-raxxy.mongodb.net:27017,cluster0-shard-00-02-raxxy.mongodb.net:27017"
-)
+    db="heroku_5r8w8qrj",
+    username="heroku_5r8w8qrj",
+    password="h83utcc1friig01vakh2m2k137",
+    host="ds217208.mlab.com:17208")
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators

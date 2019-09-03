@@ -9,9 +9,12 @@ class CardViewSet(ViewSet):
     serializer_class = CardSerializer
 
     def list(self, request, *args, **kwargs):
+        # method for get list of card
+
         if 'player_class' not in request.query_params:
             return Response([])
 
+        # get card from monogodb
         cards = Card.objects(
             __raw__={
                 '$or': [{
@@ -23,6 +26,7 @@ class CardViewSet(ViewSet):
 
         result = []
 
+        # restructure cards
         for card in cards:
             result.append({
                 'dbf_id': card['dbfId'],
@@ -30,6 +34,8 @@ class CardViewSet(ViewSet):
                 'player_class': card['playerClass']
             })
 
+        # shuffle card and return 30 item
         random.shuffle(result)
         result = result[0:30]
+
         return Response(result)

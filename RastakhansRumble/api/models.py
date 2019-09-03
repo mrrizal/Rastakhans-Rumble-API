@@ -2,6 +2,7 @@ from mongoengine import Document, fields
 
 
 class Card(Document):
+    # define every field
     cardId = fields.StringField()
     dbfId = fields.StringField()
     name = fields.StringField()

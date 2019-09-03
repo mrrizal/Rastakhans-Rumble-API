@@ -3,6 +3,7 @@ import requests
 
 
 def get_card_info():
+    # function for get card information and save it to json file
     headers = {
         'X-Mashape-Key': 'ZTMJtzbYvXmshPTFEZI4ztIy3I68p1nPwgHjsnIGukKZeJxGcs'
     }
